@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang=en xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>my database</title>
+</head>
+<body>
+	<div th:each="pay:${pay}">
+		<p th:text="${pay.name}"></p>
+		<p th:text="${pay.capitale}"></p>
+		<p th:text="${pay.population}"></p>
+	</div>
+</body>
+</html>
