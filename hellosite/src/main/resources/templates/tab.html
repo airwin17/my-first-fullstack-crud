@@ -1,14 +1,44 @@
 <!DOCTYPE html>
-<html lang=en xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="ISO-8859-1">
-	<title>my database</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="css/style.css">
+    
+    <title>my table</title>
 </head>
 <body>
-	<div th:each="pay:${pay}">
-		<p th:text="${pay.name}"></p>
-		<p th:text="${pay.capitale}"></p>
-		<p th:text="${pay.population}"></p>
-	</div>
+<form th:object="${addpays}">
+    <div class="input-pays">
+        <label>Name</label>
+        <input type="text" id="inName" name="name" th:field="${name}">
+    </div>
+    <div class="input-pays">
+        <label for="capital">Capital</label>
+        <input type="text" id="inCapital" name="capital" th:field="${capitale}">
+    </div>
+    <div class="input-pays">
+        <label >Population</label>
+        <input type="text" id="inpop" name="population" th:field="${population}">
+    </div >
+    <div class="crud">
+        <button type="submit" id="submit">submit</button>
+    </div>
+</form>
+    <table id="tab">
+        <tr>
+            <th>name</th>
+            <th>capital</th>
+            <th>population</th>
+        </tr>
+        <tr th:each="pays : ${pays}" th:object="${pays}">
+        	<td th:text="${pays.name}"></td>
+        	<td th:text="${pays.capitale}"></td>
+        	<td th:text="${pays.population}"></td>
+        </tr>
+        
+    </Table>
+    <script src="javascript/javascript.js" th:inline="javascript"></script>
 </body>
 </html>
