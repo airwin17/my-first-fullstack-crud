@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="css/style.css">
+    <link rel="stylesheet" href="css/tab.css">
     
     <title>my table</title>
 </head>
 <body>
-<form th:object="${addpays}">
+<form>
     <div class="input-pays">
         <label>Name</label>
-        <input type="text" id="inName" name="name" th:field="${name}">
+        <input type="text" id="inName" name="name">
     </div>
     <div class="input-pays">
         <label for="capital">Capital</label>
-        <input type="text" id="inCapital" name="capital" th:field="${capitale}">
+        <input type="text" id="inCapital" name="capital">
     </div>
     <div class="input-pays">
         <label >Population</label>
-        <input type="text" id="inpop" name="population" th:field="${population}">
+        <input type="text" id="inpop" name="population">
     </div >
     <div class="crud">
-        <button type="submit" id="submit">submit</button>
+        <button type="button" id="k">submit</button>
     </div>
 </form>
     <table id="tab">
@@ -39,6 +39,6 @@
         </tr>
         
     </Table>
-    <script src="javascript/javascript.js" th:inline="javascript"></script>
+    <script th:src="${javascript/tab.js}"></script>
 </body>
 </html>

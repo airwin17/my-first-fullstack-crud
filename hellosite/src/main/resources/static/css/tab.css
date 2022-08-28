@@ -1,0 +1,36 @@
+#tab{
+    margin: auto;
+    border-collapse: collapse;
+    width: 40%;
+    border: 1px solid;
+    table-layout: fixed;
+}
+#tab tr{
+  border: 1px solid;
+  
+}
+#tab td,th{
+  border: 1px solid;
+  text-align: center;
+}
+.input-pays{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: aquamarine;
+}
+th{
+    background-color: aqua;
+}
+.crud{
+  background-color: burlywood;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+.crud #submit{
+  background-color: red;
+}

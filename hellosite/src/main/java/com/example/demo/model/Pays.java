@@ -9,6 +9,9 @@ public class Pays {
 		this.capitale = capitale;
 		this.population = population;
 	}
+	public Pays() {
+		
+	}
 	
 
 }
