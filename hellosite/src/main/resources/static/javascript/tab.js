@@ -1,14 +1,10 @@
-
 var tab= document.getElementById("tab");
 var but=document.getElementById("k");
+ console.log("trjjjiggred")
 var inpop=document.getElementById("inpop");
-var inCapital=document.getElementById("inCapital");
+var inCapitale=document.getElementById("inCapital");
 var inName=document.getElementById("inName");
-let pays={
-	name:inName.value,
-	capital:inCapital.value,
-	population:inpop.value
-}
+
 console.log(but.innerText);
 function add(nm,cap,pop){
     var row =tab.insertRow(tab.rows.length);
@@ -19,31 +15,35 @@ function add(nm,cap,pop){
     cell1.innerText=cap;
     cell2.innerText=pop;
     
-    
+}    
 document.getElementById("k").onclick = function(){
     console.log("triggred")
     if(inpop.value!=""&&inCapital!=""&&inName!=""){
         add(inName.value,inCapital.value,inpop.value);
-/*         	fetch("http://localhost:8080/addpays",{
+        let p={
+			name:inName.value,
+			capitale:inCapital.value,
+			population:inpop.value
+		}
+         	fetch("http://localhost:8080/addpays",{
 		method:"POST",
 		headers:{
 			'Content-Type': 'application/json',
 		},
-		body: JSON.stringify(data),
+		body: JSON.stringify(p),
 	})
 		.then(respense=>respense.json())
-		.then((data) => {
-    	console.log('Success:', data);
+		.then((p) => {
+    	console.log('Success:', p);
   	})
 		.catch((error) => {
     	console.error('Error:', error);
-  });*/
-}	
+  });	
         
         
     }
     inName.value="";
-    inCapital.value="";
+    inCapitale.value="";
     inpop.value="";
 
 
