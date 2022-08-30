@@ -24,7 +24,6 @@ public class Control {
 	@GetMapping("/tab")
 	public String ShowDatabase(Model model) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
 		
-		System.out.println(1111);
 		Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
 		Connection con=DriverManager.getConnection("jdbc:Mysql://localhost:3306","root","nonono");
 		Statement st=con.createStatement();
@@ -38,7 +37,6 @@ public class Control {
 		lpays.toArray();
 		model.addAttribute("pays",lpays);
 		model.addAttribute("addpays",new Pays("","",""));
-		System.out.println(1222);
 		
 		return "tab";
 		
@@ -49,9 +47,10 @@ public class Control {
 		Connection con=DriverManager.getConnection("jdbc:Mysql://localhost:3306","root","nonono");
 		Statement st=con.createStatement();
 		st.addBatch("USE paysdata");
-		st.addBatch("INSERT INTO pays");
-		st.addBatch("VALUES ("+pay.name+","+pay.capitale+","+pay.population+");");
+		st.addBatch("INSERT INTO pays "+"VALUES ('"+pay.name+"','"+pay.capitale+"','"+pay.population+"');");
+		System.out.println(pay.capitale);
 		st.executeBatch();
+		System.out.println(555555);
 		return true;
 	}
 
