@@ -23,7 +23,9 @@
         <input type="text" id="inpop" name="population">
     </div >
     <div class="crud">
-        <button type="button" id="k" >submit</button>
+        <button type="button" id="submit" >submit</button>
+        <button type="button" id="remove" disabled>remove</button>
+        <button type="button" id="update" disabled>update</button>
     </div>
 </form>
     <table id="tab">
@@ -32,7 +34,7 @@
             <th>capital</th>
             <th>population</th>
         </tr>
-        <tr th:each="pays : ${pays}" th:object="${pays}">
+        <tr th:each="pays : ${pays}" th:object="${pays}" th:onclick="handler(this)">
         	<td th:text="${pays.name}"></td>
         	<td th:text="${pays.capitale}"></td>
         	<td th:text="${pays.population}"></td>
